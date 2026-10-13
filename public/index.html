@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SapaWarga AI - Layanan Masyarakat & Pengaduan Publik Cerdas</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-800">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white text-xs py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-medium">Layanan Aspirasi & Pengaduan Online Rakyat Siaga 24/7</span>
+      </div>
+      <div class="flex items-center gap-4 text-blue-100">
+        <span>🚨 Layanan Darurat Terpadu: <b class="text-white font-bold tracking-wider">112 (Bebas Pulsa)</b></span>
+        <span class="hidden md:inline">|</span>
+        <span class="hidden md:inline">Pemerintah Terbuka & Responsif</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-40 glass-header border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Brand Logo -->
+        <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('chat')">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+            <i data-lucide="bot" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-lg font-bold tracking-tight text-slate-900">SapaWarga<span class="text-blue-600">.AI</span></span>
+              <span class="bg-blue-100 text-blue-700 text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase">Layanan Publik</span>
+            </div>
+            <p class="text-xs text-slate-500 hidden sm:block">Portal Informasi & Penanganan Keluhan Warga Berbasis AI</p>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="flex items-center gap-1 sm:gap-2">
+          <button onclick="switchTab('chat')" id="nav-chat" class="nav-btn active flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-blue-600 bg-blue-50 transition">
+            <i data-lucide="message-square" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Tanya AI</span>
+          </button>
+          <button onclick="switchTab('track')" id="nav-track" class="nav-btn flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100 transition">
+            <i data-lucide="search" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Lacak Tiket</span>
+          </button>
+          <button onclick="switchTab('form')" id="nav-form" class="nav-btn flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100 transition">
+            <i data-lucide="file-plus-2" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Buat Laporan</span>
+          </button>
+          <button onclick="switchTab('catalog')" id="nav-catalog" class="nav-btn flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100 transition">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Panduan Syarat</span>
+          </button>
+          <button onclick="switchTab('admin')" id="nav-admin" class="nav-btn flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100 transition border border-transparent hover:border-slate-200">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+            <span class="hidden md:inline">Panel Petugas</span>
+          </button>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+    <!-- ========================================== -->
+    <!-- TAB 1: CHATBOT AI WARGA                    -->
+    <!-- ========================================== -->
+    <div id="tab-chat" class="tab-pane active space-y-4">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Left Column: Main Chat Window (8 cols) -->
+        <div class="lg:col-span-8 flex flex-col bg-white rounded-2xl shadow-sm border border-slate-200 h-[720px] overflow-hidden">
+          
+          <!-- Chat Header -->
+          <div class="px-5 py-4 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="relative">
+                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-semibold">
+                  <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </div>
+                <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></span>
+              </div>
+              <div>
+                <h2 class="font-bold text-slate-900 leading-tight">Asisten AI SapaWarga</h2>
+                <p class="text-xs text-slate-500">Siap menjawab syarat berkas & mencatat aduan Anda</p>
+              </div>
+            </div>
+
+            <!-- Header Action: Clear & Speech toggle -->
+            <div class="flex items-center gap-2">
+              <button onclick="clearChat()" title="Bersihkan Percakapan" class="p-2 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition">
+                <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Suggestions Chips Bar -->
+          <div class="px-4 py-2 bg-slate-50 border-b border-slate-100 overflow-x-auto whitespace-nowrap flex gap-2 text-xs">
+            <span class="text-slate-400 font-medium py-1">Topik Cepat:</span>
+            <button onclick="sendQuickPrompt('Syarat mengurus KTP yang hilang')" class="px-2.5 py-1 bg-white border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-600 rounded-full transition shadow-sm">
+              🆔 KTP Hilang
+            </button>
+            <button onclick="sendQuickPrompt('Bagaimana cara mengecek bansos PKH dan BPNT?')" class="px-2.5 py-1 bg-white border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-600 rounded-full transition shadow-sm">
+              🤝 Cek Bansos
+            </button>
+            <button onclick="sendQuickPrompt('Lapor jalan berlubang parah di Jalan Pemuda depan kantor pos')" class="px-2.5 py-1 bg-white border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-600 rounded-full transition shadow-sm">
+              🚧 Lapor Jalan Rusak
+            </button>
+            <button onclick="sendQuickPrompt('Cara daftar NIB gratis untuk UMKM')" class="px-2.5 py-1 bg-white border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-600 rounded-full transition shadow-sm">
+              💼 Izin NIB UMKM
+            </button>
+            <button onclick="sendQuickPrompt('Cek status tiket LAPOR-2026-0101')" class="px-2.5 py-1 bg-white border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-600 rounded-full transition shadow-sm">
+              🔍 Cek LAPOR-2026-0101
+            </button>
+            <button onclick="sendQuickPrompt('Nomor kontak darurat ambulans dan damkar')" class="px-2.5 py-1 bg-white border border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-600 rounded-full transition shadow-sm">
+              🚨 Nomor Darurat
+            </button>
+          </div>
+
+          <!-- Chat Messages Area -->
+          <div id="chat-messages" class="flex-1 p-5 overflow-y-auto space-y-4 bg-slate-50/30">
+            
+            <!-- Welcome message from bot -->
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-sm font-semibold shadow-sm">
+                AI
+              </div>
+              <div class="chat-bubble-bot p-4 max-w-[85%]">
+                <div class="markdown-content">
+                  <p class="font-semibold text-slate-900 mb-1">Halo Warga! 👋 Selamat datang di Layanan AI SapaWarga.</p>
+                  <p>Saya asisten kecerdasan buatan pelayanan publik. Saya dapat membantu Anda dalam:</p>
+                  <ul class="list-disc pl-4 text-sm space-y-1 text-slate-700 mt-2">
+                    <li><b>Administrasi Kependudukan</b> (KTP, KK, Akta Lahir, Surat Pindah)</li>
+                    <li><b>Bantuan Sosial</b> (Cek PKH, BPNT, dan pendaftaran DTKS)</li>
+                    <li><b>Pengaduan Warga</b> (Lapor jalan rusak, PJU padam, sampah menumpuk)</li>
+                    <li><b>Perizinan UMKM & Kesehatan</b> (NIB OSS, rujukan BPJS)</li>
+                    <li><b>Pelacakan Tiket Laporan</b> (Cukup ketik nomor tiket Anda)</li>
+                  </ul>
+                  <p class="mt-3 text-xs text-slate-500">Silakan ajukan pertanyaan atau ketik langsung keluhan Anda!</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Typing Indicator (Hidden by default) -->
+          <div id="typing-indicator" class="hidden px-5 py-2 bg-slate-50/50 flex items-center gap-2 text-xs text-slate-500">
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="ml-1">SapaWarga AI sedang menyusun jawaban...</span>
+          </div>
+
+          <!-- Chat Input Area -->
+          <div class="p-4 bg-white border-t border-slate-100">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex items-center gap-2">
+              <div class="relative flex-1">
+                <input 
+                  type="text" 
+                  id="chat-input" 
+                  placeholder="Ketik pertanyaan atau keluhan Anda di sini (misal: 'syarat KTP hilang' atau 'lapor sampah')..." 
+                  class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm placeholder-slate-400"
+                  autocomplete="off"
+                >
+                <button 
+                  type="button" 
+                  id="btn-mic" 
+                  onclick="toggleVoiceRecognition()" 
+                  title="Gunakan Suara (Voice to Text)"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-slate-400 hover:text-blue-600 rounded-lg transition"
+                >
+                  <i data-lucide="mic" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <button 
+                type="submit" 
+                id="btn-send"
+                class="px-5 py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium rounded-xl text-sm transition flex items-center gap-2 shadow-sm shadow-blue-500/20"
+              >
+                <span>Kirim</span>
+                <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </form>
+            <div class="flex items-center justify-between mt-2 text-[11px] text-slate-400 px-1">
+              <span>💡 Percakapan terenkripsi & dijaga kerahasiaan datanya</span>
+              <span id="speech-status" class="hidden text-blue-600 font-medium animate-pulse">🎙️ Mendengarkan suara Anda...</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Info Widget Sidebar (4 cols) -->
+        <div class="lg:col-span-4 space-y-4">
+          
+          <!-- Quick Status Check Card -->
+          <div class="bg-gradient-to-br from-indigo-900 to-blue-900 text-white rounded-2xl p-5 shadow-sm">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="ticket" class="w-5 h-5 text-indigo-300"></i>
+              <h3 class="font-bold text-base">Cek Cepat Status Laporan</h3>
+            </div>
+            <p class="text-xs text-indigo-200 mb-4">Punya nomor tiket laporan? Masukkan nomornya untuk melihat tindak lanjut petugas secara instan.</p>
+            <div class="flex gap-2">
+              <input 
+                type="text" 
+                id="quick-track-input" 
+                placeholder="Contoh: LAPOR-2026-0101" 
+                class="flex-1 px-3 py-2 text-xs rounded-lg bg-white/10 border border-white/20 text-white placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-white/40 uppercase"
+              >
+              <button 
+                onclick="handleQuickTrack()" 
+                class="px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded-lg text-xs font-semibold transition"
+              >
+                Cek
+              </button>
+            </div>
+          </div>
+
+          <!-- Emergency Numbers Card -->
+          <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-sm mb-3 flex items-center gap-2">
+              <i data-lucide="phone-call" class="w-4 h-4 text-red-500"></i>
+              Kontak Darurat Terintegrasi
+            </h3>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="p-2.5 rounded-xl bg-red-50 border border-red-100 flex flex-col justify-between">
+                <span class="text-red-700 font-bold text-base">112</span>
+                <span class="text-slate-600 font-medium">Darurat Terpadu (Gratis)</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-100 flex flex-col justify-between">
+                <span class="text-amber-700 font-bold text-base">113</span>
+                <span class="text-slate-600 font-medium">Pemadam Kebakaran</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-blue-50 border border-blue-100 flex flex-col justify-between">
+                <span class="text-blue-700 font-bold text-base">110</span>
+                <span class="text-slate-600 font-medium">Kepolisian RI</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100 flex flex-col justify-between">
+                <span class="text-emerald-700 font-bold text-base">119</span>
+                <span class="text-slate-600 font-medium">Ambulans Medis</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Information Services Card -->
+          <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-sm mb-3 flex items-center gap-2">
+              <i data-lucide="shield-alert" class="w-4 h-4 text-amber-500"></i>
+              Prinsip Bebas Pungli
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Seluruh pengurusan administrasi kependudukan (KTP, KK, Akta Lahir, Surat Pindah) di loket pemerintah adalah <strong class="text-emerald-600">Rp 0,- (GRATIS)</strong>. Laporkan jika ada oknum yang meminta imbalan!
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: LACAK TIKET PENGADUAN               -->
+    <!-- ========================================== -->
+    <div id="tab-track" class="tab-pane hidden space-y-6">
+      
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+        <div class="max-w-2xl mx-auto text-center space-y-3">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 mb-1">
+            <i data-lucide="search" class="w-6 h-6"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900">Lacak Status Pengaduan Warga</h2>
+          <p class="text-sm text-slate-500">Masukkan kode tiket pengaduan yang Anda dapatkan dari Chatbot atau Formulir untuk memantau progress secara transparan.</p>
+          
+          <form onsubmit="handleTrackSearch(event)" class="flex gap-2 max-w-lg mx-auto pt-3">
+            <input 
+              type="text" 
+              id="track-search-input" 
+              placeholder="Contoh: LAPOR-2026-0101" 
+              class="flex-1 px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm uppercase font-medium"
+              required
+            >
+            <button 
+              type="submit" 
+              class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl text-sm transition shadow-sm"
+            >
+              Lacak Tiket
+            </button>
+          </form>
+
+          <!-- Quick Test Samples -->
+          <div class="flex flex-wrap items-center justify-center gap-2 text-xs text-slate-500 pt-2">
+            <span>Coba contoh tiket:</span>
+            <button onclick="setAndTrack('LAPOR-2026-0101')" class="text-blue-600 hover:underline font-mono">LAPOR-2026-0101 (Jalan Rusak)</button>
+            <span>•</span>
+            <button onclick="setAndTrack('LAPOR-2026-0102')" class="text-blue-600 hover:underline font-mono">LAPOR-2026-0102 (Sampah Kali)</button>
+            <span>•</span>
+            <button onclick="setAndTrack('LAPOR-2026-0103')" class="text-blue-600 hover:underline font-mono">LAPOR-2026-0103 (Lampu PJU)</button>
+          </div>
+        </div>
+
+        <!-- Result Container -->
+        <div id="track-result-container" class="mt-8 max-w-3xl mx-auto hidden">
+          <!-- Injected dynamically by app.js -->
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: FORMULIR PENGADUAN MANDIRI          -->
+    <!-- ========================================== -->
+    <div id="tab-form" class="tab-pane hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm max-w-3xl mx-auto">
+        
+        <div class="border-b border-slate-200 pb-5 mb-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+              <i data-lucide="clipboard-pen" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-slate-900">Formulir Aspirasi & Pengaduan Warga</h2>
+              <p class="text-xs text-slate-500">Laporkan permasalahan infrastruktur, kebersihan, atau pelayanan publik di sekitar Anda</p>
+            </div>
+          </div>
+        </div>
+
+        <form id="public-report-form" onsubmit="handlePublicReportSubmit(event)" class="space-y-5">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap Pelapor</label>
+              <input 
+                type="text" 
+                id="form-reporter" 
+                placeholder="Bisa anonim atau nama Anda" 
+                class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                required
+              >
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Nomor WhatsApp / HP Aktif</label>
+              <input 
+                type="text" 
+                id="form-phone" 
+                placeholder="Contoh: 0812-XXXX-XXXX" 
+                class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Kategori Layanan</label>
+              <select 
+                id="form-category" 
+                class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white"
+                required
+              >
+                <option value="pupr">Infrastruktur & Jalan (PUPR)</option>
+                <option value="kebersihan">Kebersihan & Sampah (DLH)</option>
+                <option value="dukcapil">Administrasi Kependudukan (Dukcapil)</option>
+                <option value="bansos">Bantuan Sosial (Dinsos)</option>
+                <option value="kesehatan">Kesehatan & Puskesmas</option>
+                <option value="umkm">Perizinan Usaha / UMKM</option>
+                <option value="lainnya">Kategori Lainnya</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Tingkat Urgensi</label>
+              <select 
+                id="form-urgency" 
+                class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white"
+              >
+                <option value="Sedang">Sedang (Standar 3-7 hari)</option>
+                <option value="Rendah">Rendah (Informasi / Saran)</option>
+                <option value="Tinggi">Tinggi (Mendesak / Mengganggu)</option>
+                <option value="Darurat">Darurat (Membahayakan Jiwa)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Judul Ringkas Laporan</label>
+            <input 
+              type="text" 
+              id="form-title" 
+              placeholder="Contoh: Jalan berlubang di depan SMP 1 Sukamaju" 
+              class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              required
+            >
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Lokasi Detail Kejadian</label>
+            <input 
+              type="text" 
+              id="form-location" 
+              placeholder="Sebutkan nama jalan, patokan gedung/toko, RT/RW, dan kelurahan" 
+              class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              required
+            >
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Uraian / Deskripsi Lengkap Keluhan</label>
+            <textarea 
+              id="form-desc" 
+              rows="4" 
+              placeholder="Jelaskan secara kronologis dan detail apa masalahnya, dampaknya bagi warga sekitar, dan sudah berlangsung berapa lama..." 
+              class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Mock Attachment Uploader -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Lampiran Foto Bukti (Opsional)</label>
+            <div class="border-2 border-dashed border-slate-300 rounded-xl p-4 text-center hover:bg-slate-50 transition cursor-pointer" onclick="document.getElementById('form-file').click()">
+              <input type="file" id="form-file" class="hidden" accept="image/*" onchange="previewUploadedImage(event)">
+              <div id="upload-placeholder" class="space-y-1">
+                <i data-lucide="image-plus" class="w-6 h-6 mx-auto text-slate-400"></i>
+                <p class="text-xs text-slate-600 font-medium">Klik untuk memilih foto dari perangkat Anda</p>
+                <p class="text-[11px] text-slate-400">JPG, PNG, atau WEBP hingga 5MB</p>
+              </div>
+              <div id="upload-preview-container" class="hidden">
+                <img id="upload-preview" src="" alt="Bukti Foto" class="max-h-40 mx-auto rounded-lg shadow-sm border border-slate-200">
+                <button type="button" onclick="event.stopPropagation(); removeUploadedImage()" class="text-xs text-red-600 hover:underline mt-2 font-medium">Hapus Foto</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button 
+              type="submit" 
+              id="btn-submit-form" 
+              class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm transition shadow-md shadow-blue-500/20 flex items-center justify-center gap-2"
+            >
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>Kirimkan Pengaduan & Dapatkan Tiket</span>
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 4: KATALOG & SYARAT LAYANAN            -->
+    <!-- ========================================== -->
+    <div id="tab-catalog" class="tab-pane hidden space-y-6">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Katalog Panduan & Persyaratan Dokumen</h2>
+          <p class="text-sm text-slate-500">Informasi resmi prosedur dan syarat dokumen layanan publik terlengkap</p>
+        </div>
+        
+        <!-- Live Search in Catalog -->
+        <div class="relative w-full sm:w-72">
+          <input 
+            type="text" 
+            id="catalog-search" 
+            oninput="filterCatalog(this.value)" 
+            placeholder="Cari syarat (misal: ktp, bansos)..." 
+            class="w-full pl-9 pr-4 py-2 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          >
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+        </div>
+      </div>
+
+      <!-- Categories Filter Pills -->
+      <div id="catalog-category-pills" class="flex flex-wrap gap-2 pt-1">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- FAQ Accordion List -->
+      <div id="catalog-faq-list" class="space-y-3">
+        <!-- Rendered by app.js -->
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 5: PANEL PETUGAS / ADMIN DASHBOARD     -->
+    <!-- ========================================== -->
+    <div id="tab-admin" class="tab-pane hidden space-y-6">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200 pb-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 class="text-2xl font-bold text-slate-900">Dashboard Penanganan Aduan Warga</h2>
+            <span class="bg-indigo-100 text-indigo-700 text-xs px-2.5 py-0.5 rounded-full font-semibold">Backoffice Petugas</span>
+          </div>
+          <p class="text-sm text-slate-500">Monitor dan tindak lanjuti laporan masuk dari seluruh kanal layanan</p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="loadAdminData()" class="px-3 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+            Refresh Data
+          </button>
+        </div>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+            <i data-lucide="inbox" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <p class="text-xs font-medium text-slate-500">Total Laporan</p>
+            <h3 id="stat-total" class="text-2xl font-extrabold text-slate-900">-</h3>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0">
+            <i data-lucide="clock" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <p class="text-xs font-medium text-slate-500">Menunggu Verifikasi</p>
+            <h3 id="stat-menunggu" class="text-2xl font-extrabold text-amber-600">-</h3>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+            <i data-lucide="activity" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <p class="text-xs font-medium text-slate-500">Sedang Ditindak</p>
+            <h3 id="stat-diproses" class="text-2xl font-extrabold text-indigo-600">-</h3>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+            <i data-lucide="check-check" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <p class="text-xs font-medium text-slate-500">Selesai Tuntas</p>
+            <h3 id="stat-selesai" class="text-2xl font-extrabold text-emerald-600">-</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Filters & Tickets Table -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        
+        <div class="p-4 border-b border-slate-100 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-semibold text-slate-600">Filter Status:</span>
+            <button onclick="filterAdminTickets('SEMUA')" id="filter-SEMUA" class="filter-status-btn active px-3 py-1 text-xs rounded-lg font-medium bg-blue-600 text-white">Semua</button>
+            <button onclick="filterAdminTickets('MENUNGGU')" id="filter-MENUNGGU" class="filter-status-btn px-3 py-1 text-xs rounded-lg font-medium bg-slate-100 text-slate-600 hover:bg-slate-200">Menunggu</button>
+            <button onclick="filterAdminTickets('DIPROSES')" id="filter-DIPROSES" class="filter-status-btn px-3 py-1 text-xs rounded-lg font-medium bg-slate-100 text-slate-600 hover:bg-slate-200">Diproses</button>
+            <button onclick="filterAdminTickets('SELESAI')" id="filter-SELESAI" class="filter-status-btn px-3 py-1 text-xs rounded-lg font-medium bg-slate-100 text-slate-600 hover:bg-slate-200">Selesai</button>
+          </div>
+
+          <div class="w-full sm:w-64">
+            <input 
+              type="text" 
+              id="admin-search" 
+              oninput="handleAdminSearch(this.value)" 
+              placeholder="Cari ID, pelapor, atau lokasi..." 
+              class="w-full px-3 py-1.5 text-xs border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+          </div>
+        </div>
+
+        <!-- Table of Tickets -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-50 text-slate-600 uppercase font-semibold border-b border-slate-200">
+              <tr>
+                <th class="px-4 py-3">ID Tiket</th>
+                <th class="px-4 py-3">Pelapor</th>
+                <th class="px-4 py-3">Kategori & Judul</th>
+                <th class="px-4 py-3">Lokasi</th>
+                <th class="px-4 py-3">Urgensi</th>
+                <th class="px-4 py-3">Status</th>
+                <th class="px-4 py-3">Aksi Petugas</th>
+              </tr>
+            </thead>
+            <tbody id="admin-tickets-tbody" class="divide-y divide-slate-100">
+              <!-- Rendered by app.js -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- MODAL: Update Status Petugas -->
+  <div id="status-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+          <i data-lucide="edit-3" class="w-4 h-4 text-blue-600"></i>
+          Update Penanganan Laporan
+        </h3>
+        <button onclick="closeStatusModal()" class="text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="font-semibold text-slate-700 block mb-1">Nomor Tiket</label>
+          <input type="text" id="modal-ticket-id" readonly class="w-full px-3 py-2 bg-slate-100 border border-slate-200 rounded-lg font-mono font-bold text-slate-800">
+        </div>
+
+        <div>
+          <label class="font-semibold text-slate-700 block mb-1">Status Baru</label>
+          <select id="modal-ticket-status" class="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white">
+            <option value="MENUNGGU">MENUNGGU (Verifikasi Awal)</option>
+            <option value="DIPROSES">DIPROSES (Diterjunkan Petugas Lapangan)</option>
+            <option value="SELESAI">SELESAI (Masalah Telah Dituntaskan)</option>
+            <option value="DITOLAK">DITOLAK (Laporan Tidak Valid)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="font-semibold text-slate-700 block mb-1">Nama Petugas Penindak</label>
+          <input type="text" id="modal-ticket-by" value="Petugas Dinas Terkait" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+        </div>
+
+        <div>
+          <label class="font-semibold text-slate-700 block mb-1">Catatan Tindak Lanjut Petugas</label>
+          <textarea id="modal-ticket-note" rows="3" placeholder="Contoh: Tim lapangan telah menambal jalan dan merapikan material aspal pada jam 14:00..." class="w-full px-3 py-2 border border-slate-300 rounded-lg"></textarea>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-2 pt-2 border-t border-slate-100">
+        <button onclick="closeStatusModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg transition">Batal</button>
+        <button onclick="submitStatusUpdate()" class="px-4 py-2 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition shadow-sm">Simpan Pembaruan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl text-xs font-medium flex items-center gap-2 transform translate-y-20 opacity-0 transition duration-300">
+    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toast-text">Notifikasi</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-800">SapaWarga AI</span> &copy; 2026. Portal Inovasi Pelayanan Publik Cerdas.
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span>Transparansi</span>
+        <span>•</span>
+        <span>Aksesibilitas Warga</span>
+        <span>•</span>
+        <span>Bebas Pungli</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

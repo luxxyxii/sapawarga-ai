@@ -1,0 +1,152 @@
+[
+  {
+    "id": "LAPOR-2026-9736",
+    "reporterName": "Budi Santoso",
+    "phone": "08123456789",
+    "category": "pupr",
+    "categoryName": "Infrastruktur & Fasilitas Umum",
+    "title": "Penerangan jalan mati di RT 02",
+    "description": "Lampu tiang padam sejak semalam",
+    "location": "RT 02 RW 05",
+    "urgency": "Sedang",
+    "status": "DIPROSES",
+    "assignedDinas": "Dinas Pekerjaan Umum & Penataan Ruang (PUPR)",
+    "source": "Portal Web",
+    "createdAt": "2026-10-13T10:53:29.910Z",
+    "updatedAt": "2026-10-13T10:54:29.723Z",
+    "timeline": [
+      {
+        "status": "MENUNGGU",
+        "timestamp": "2026-10-13T10:53:29.910Z",
+        "note": "Laporan berhasil dibuat via Portal Web dan sedang mengantre verifikasi awal.",
+        "by": "Sistem Terpadu SapaWarga"
+      },
+      {
+        "status": "DIPROSES",
+        "timestamp": "2026-10-13T10:54:29.723Z",
+        "note": "Teknisi telah ditugaskan menuju lokasi",
+        "by": "Petugas Dishub"
+      }
+    ]
+  },
+  {
+    "id": "LAPOR-2026-0101",
+    "reporterName": "Ahmad Fauzi",
+    "phone": "0812-8877-1234",
+    "category": "pupr",
+    "categoryName": "Infrastruktur & Fasilitas Umum",
+    "title": "Jalan Berlubang Dalam di Depan Pasar Rebo",
+    "description": "Terdapat lubang sedalam kurang lebih 15 cm berdiameter 1 meter tepat di depan gerbang utama Pasar Rebo. Sangat membahayakan pengendara motor terutama saat hujan deras karena tergenang air.",
+    "location": "Jl. Raya Pasar Rebo No. 12, Kel. Gedong, Kec. Pasar Rebo",
+    "urgency": "Tinggi",
+    "status": "DIPROSES",
+    "assignedDinas": "Dinas Pekerjaan Umum & Penataan Ruang (PUPR)",
+    "source": "Chatbot AI",
+    "createdAt": "2026-10-10T09:15:00.000Z",
+    "updatedAt": "2026-10-11T14:30:00.000Z",
+    "timeline": [
+      {
+        "status": "MENUNGGU",
+        "timestamp": "2026-10-10T09:15:00.000Z",
+        "note": "Laporan diterima oleh sistem AI SapaWarga dan diverifikasi awal.",
+        "by": "Sistem AI"
+      },
+      {
+        "status": "DIPROSES",
+        "timestamp": "2026-10-11T14:30:00.000Z",
+        "note": "Dinas PUPR telah menerjunkan Tim Unit Reaksi Cepat (URC) untuk pengukuran dan jadwal pengaspalan tambal sulam pada 14 Oktober 2026.",
+        "by": "Petugas PUPR (Budi Santoso)"
+      }
+    ]
+  },
+  {
+    "id": "LAPOR-2026-0102",
+    "reporterName": "Siti Rahmawati",
+    "phone": "0857-1122-9988",
+    "category": "kebersihan",
+    "categoryName": "Kebersihan & Lingkungan Hidup",
+    "title": "Tumpukan Sampah Liar di Pinggir Kali Baru",
+    "description": "Banyak warga luar membuang sampah kantong plastik di bantaran kali samping jembatan. Bau menyengat dan mulai menyumbat aliran air sungai menjelang musim hujan.",
+    "location": "Bantaran Kali Baru RT 04/RW 03, Kel. Tugu, Kec. Cimanggis",
+    "urgency": "Sedang",
+    "status": "SELESAI",
+    "assignedDinas": "Dinas Lingkungan Hidup (DLH)",
+    "source": "Form Pengaduan",
+    "createdAt": "2026-10-08T11:20:00.000Z",
+    "updatedAt": "2026-10-10T16:00:00.000Z",
+    "timeline": [
+      {
+        "status": "MENUNGGU",
+        "timestamp": "2026-10-08T11:20:00.000Z",
+        "note": "Laporan warga diterima melalui portal lapor.",
+        "by": "Petugas Admin"
+      },
+      {
+        "status": "DIPROSES",
+        "timestamp": "2026-10-09T08:00:00.000Z",
+        "note": "1 unit truk sampah DLH dan 5 petugas oranye dikerahkan ke lokasi.",
+        "by": "DLH Wilayah II"
+      },
+      {
+        "status": "SELESAI",
+        "timestamp": "2026-10-10T16:00:00.000Z",
+        "note": "Area bantaran kali telah dibersihkan seluruhnya dan dipasang spanduk larangan pembuangan sampah liar serta denda perda.",
+        "by": "Pengawas DLH (Drs. Hermawan)"
+      }
+    ]
+  },
+  {
+    "id": "LAPOR-2026-0103",
+    "reporterName": "Hendra Wijaya",
+    "phone": "0819-3344-5566",
+    "category": "pupr",
+    "categoryName": "Infrastruktur & Fasilitas Umum",
+    "title": "3 Lampu Penerangan Jalan (PJU) Padam di Jalur Utama",
+    "description": "Lampu penerangan jalan nomor tiang PJ-102 sampai PJ-104 padam total sejak 4 hari lalu. Kondisi jalan sangat gelap dan rawan tindak kejahatan serta kecelakaan.",
+    "location": "Jl. Margonda Raya KM 4, Depan Gang Beringin",
+    "urgency": "Tinggi",
+    "status": "MENUNGGU",
+    "assignedDinas": "Dinas Perhubungan & PUPR",
+    "source": "Chatbot AI",
+    "createdAt": "2026-10-13T08:00:00.000Z",
+    "updatedAt": "2026-10-13T08:00:00.000Z",
+    "timeline": [
+      {
+        "status": "MENUNGGU",
+        "timestamp": "2026-10-13T08:00:00.000Z",
+        "note": "Laporan pengaduan PJU padam berhasil dibuat dan diteruskan ke sistem tiket Dishub/PUPR.",
+        "by": "Sistem AI SapaWarga"
+      }
+    ]
+  },
+  {
+    "id": "LAPOR-2026-0104",
+    "reporterName": "Dewi Kartika",
+    "phone": "0821-9988-7711",
+    "category": "dukcapil",
+    "categoryName": "Administrasi Kependudukan",
+    "title": "Permohonan Cetak KTP Pemula Masuk Antrean",
+    "description": "Sudah melakukan perekaman KTP-el di kantor kelurahan pada 2 minggu lalu namun blangko belum dikabari ketersediaannya. Membutuhkan konfirmasi status cetak.",
+    "location": "Kelurahan Beji Timur, Kec. Beji",
+    "urgency": "Rendah",
+    "status": "DIPROSES",
+    "assignedDinas": "Dinas Kependudukan dan Pencatatan Sipil (Disdukcapil)",
+    "source": "Chatbot AI",
+    "createdAt": "2026-10-12T13:40:00.000Z",
+    "updatedAt": "2026-10-13T10:15:00.000Z",
+    "timeline": [
+      {
+        "status": "MENUNGGU",
+        "timestamp": "2026-10-12T13:40:00.000Z",
+        "note": "Pertanyaan dan data pemohon tercatat.",
+        "by": "Chatbot AI"
+      },
+      {
+        "status": "DIPROSES",
+        "timestamp": "2026-10-13T10:15:00.000Z",
+        "note": "Blangko telah tersedia. KTP sedang dalam proses pencetakan dan dapat diambil di kantor kecamatan mulai lusa dengan membawa resi pendaftaran.",
+        "by": "Petugas Loket Disdukcapil (Rina M.)"
+      }
+    ]
+  }
+]

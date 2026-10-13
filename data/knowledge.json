@@ -1,0 +1,256 @@
+{
+  "categories": [
+    {
+      "id": "dukcapil",
+      "name": "Administrasi Kependudukan",
+      "icon": "id-card",
+      "dinas": "Dinas Kependudukan dan Pencatatan Sipil (Disdukcapil)",
+      "description": "Layanan pembuatan dan perbaikan dokumen kependudukan seperti KTP, Kartu Keluarga, Akta Kelahiran, dan Surat Pindah."
+    },
+    {
+      "id": "bansos",
+      "name": "Bantuan Sosial & Kesejahteraan",
+      "icon": "heart-handshake",
+      "dinas": "Dinas Sosial (Dinsos)",
+      "description": "Informasi program bantuan sosial pemerintah seperti PKH, BPNT, BLT, serta pendaftaran DTKS."
+    },
+    {
+      "id": "pupr",
+      "name": "Infrastruktur & Fasilitas Umum",
+      "icon": "cone",
+      "dinas": "Dinas Pekerjaan Umum & Penataan Ruang (PUPR)",
+      "description": "Pengaduan jalan berlubang, lampu penerangan jalan (PJU) mati, drainase tersumbat, dan jembatan rusak."
+    },
+    {
+      "id": "kebersihan",
+      "name": "Kebersihan & Lingkungan Hidup",
+      "icon": "trash-2",
+      "dinas": "Dinas Lingkungan Hidup (DLH)",
+      "description": "Layanan pengangkutan sampah liar, penanganan polusi, pemangkasan pohon rawan tumbang, dan kebersihan sungai."
+    },
+    {
+      "id": "kesehatan",
+      "name": "Kesehatan & BPJS",
+      "icon": "activity",
+      "dinas": "Dinas Kesehatan & BPJS Kesehatan",
+      "description": "Layanan Puskesmas, rujukan faskes tingkat pertama ke RS, pendaftaran BPJS PBI, dan jadwal posyandu."
+    },
+    {
+      "id": "umkm",
+      "name": "Perizinan Usaha & UMKM",
+      "icon": "briefcase",
+      "dinas": "DPMPTSP & Dinas Koperasi UMKM",
+      "description": "Pembuatan Nomor Induk Berusaha (NIB) gratis via OSS, izin edar P-IRT, dan pendampingan sertifikasi halal."
+    },
+    {
+      "id": "darurat",
+      "name": "Layanan Darurat 24 Jam",
+      "icon": "phone-call",
+      "dinas": "Pusat Komando Tanggap Darurat 112",
+      "description": "Kontak darurat ambulans, pemadam kebakaran, kepolisian, dan penanganan bencana alam."
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-ktp-hilang",
+      "categoryId": "dukcapil",
+      "keywords": ["ktp hilang", "e-ktp hilang", "cara mengurus ktp hilang", "syarat ktp hilang", "surat kehilangan"],
+      "title": "Syarat & Cara Mengurus KTP Elektronik yang Hilang",
+      "summary": "Pengurusan KTP hilang gratis tanpa biaya, membutuhkan Surat Kehilangan dari Kepolisian dan Fotokopi KK.",
+      "steps": [
+        "Buat Surat Tanda Lapor Kehilangan (STLK) di Polsek terdekat (Gratis).",
+        "Siapkan fotokopi Kartu Keluarga (KK).",
+        "Kunjungi kantor Disdukcapil atau Kecamatan setempat, atau ajukan secara daring via aplikasi resmi daerah.",
+        "Petugas akan mencetak ulang KTP-el tanpa perlu perekaman sidik jari ulang (1-3 hari kerja)."
+      ],
+      "biaya": "Gratis (Rp 0)",
+      "waktu": "1 - 3 Hari Kerja"
+    },
+    {
+      "id": "faq-ktp-rusak",
+      "categoryId": "dukcapil",
+      "keywords": ["ktp rusak", "ganti ktp rusak", "ktp patah", "ktp pudar", "ganti foto ktp"],
+      "title": "Cara Mengganti KTP Elektronik yang Rusak atau Pudar",
+      "summary": "KTP yang patah, terkelupas, atau tulisannya pudar dapat diganti dengan membawa fisik KTP lama dan KK.",
+      "steps": [
+        "Bawa fisik KTP lama yang rusak.",
+        "Bawa fotokopi Kartu Keluarga (KK).",
+        "Datang ke loket Disdukcapil/Kecamatan.",
+        "KTP baru akan dicetak langsung tanpa dipungut biaya."
+      ],
+      "biaya": "Gratis (Rp 0)",
+      "waktu": "Hari yang sama (Same-day service di beberapa kecamatan)"
+    },
+    {
+      "id": "faq-kk-baru",
+      "categoryId": "dukcapil",
+      "keywords": ["bikin kk", "kartu keluarga baru", "pecah kk", "tambah anggota kk", "syarat buat kk"],
+      "title": "Syarat Pembuatan / Perubahan Kartu Keluarga (KK)",
+      "summary": "Diperlukan untuk pasangan baru menikah, penambahan anggota keluarga (kelahiran), atau pindah domisili.",
+      "steps": [
+        "Untuk pengantin baru: Fotokopi Buku Nikah/Akta Perkawinan dan KK lama masing-masing orang tua.",
+        "Untuk kelahiran anak: Surat Keterangan Lahir dari Bidan/RS dan KK orang tua.",
+        "Bawa formulir F-1.01 (bisa diisi di loket atau via aplikasi online).",
+        "Petugas memproses dan menerbitkan KK baru ber-barcode (bisa dicetak mandiri di kertas HVS A4 80gr)."
+      ],
+      "biaya": "Gratis (Rp 0)",
+      "waktu": "1 - 2 Hari Kerja"
+    },
+    {
+      "id": "faq-akta-lahir",
+      "categoryId": "dukcapil",
+      "keywords": ["akta kelahiran", "bikin akta lahir", "akta anak baru lahir", "syarat akta kelahiran"],
+      "title": "Syarat Pengurusan Akta Kelahiran Anak",
+      "summary": "Pencatatan kelahiran wajib dilaporkan maksimal 60 hari sejak kelahiran anak.",
+      "steps": [
+        "Surat Keterangan Kelahiran dari RS/Bidan/Puskesmas.",
+        "Buku Nikah / Akta Perkawinan orang tua (asli & fotokopi).",
+        "KTP kedua orang tua & KTP 2 orang saksi kelahiran.",
+        "Kartu Keluarga (KK) orang tua.",
+        "Daftarkan ke Disdukcapil atau aplikasi kependudukan online daerah Anda."
+      ],
+      "biaya": "Gratis (Rp 0)",
+      "waktu": "2 - 3 Hari Kerja"
+    },
+    {
+      "id": "faq-pindah-domisili",
+      "categoryId": "dukcapil",
+      "keywords": ["pindah domisili", "surat pindah", "skpwni", "cabut berkas pindah alamat"],
+      "title": "Cara Mengurus Surat Pindah Domisili (SKPWNI)",
+      "summary": "Saat ini proses pindah domisili tidak lagi memerlukan surat pengantar RT/RW, cukup membawa KK ke Disdukcapil.",
+      "steps": [
+        "Bawa fotokopi Kartu Keluarga (KK).",
+        "Isi formulir permohonan pindah (F-1.08) di Disdukcapil asal atau via online.",
+        "Dapatkan Surat Keterangan Pindah Warga Negara Indonesia (SKPWNI).",
+        "Bawa SKPWNI ke Disdukcapil tujuan untuk diterbitkan KK dan KTP baru."
+      ],
+      "biaya": "Gratis (Rp 0)",
+      "waktu": "1 - 2 Hari Kerja"
+    },
+    {
+      "id": "faq-cek-bansos",
+      "categoryId": "bansos",
+      "keywords": ["cek bansos", "bansos pkh", "bpnt", "bantuan sembako", "kapan bansos cair", "daftar bansos", "dtks"],
+      "title": "Cara Mengecek Penerima Bantuan Sosial (PKH, BPNT, PBI-JK)",
+      "summary": "Masyarakat dapat mengecek status kepesertaan bansos secara mandiri melalui portal resmi Kemensos atau aplikasi.",
+      "steps": [
+        "Akses situs resmi: cekbansos.kemensos.go.id",
+        "Pilih Provinsi, Kabupaten/Kota, Kecamatan, dan Desa/Kelurahan domisili.",
+        "Masukkan nama lengkap sesuai KTP.",
+        "Ketik kode captcha yang muncul di layar, lalu klik tombol 'CARI DATA'.",
+        "Sistem akan menampilkan jenis bantuan yang diterima (PKH, BPNT, BST, PBI) beserta status periode penyaluran."
+      ],
+      "biaya": "Gratis",
+      "waktu": "Langsung online"
+    },
+    {
+      "id": "faq-daftar-dtks",
+      "categoryId": "bansos",
+      "keywords": ["daftar dtks", "cara masuk dtks", "syarat dtks", "daftar pkh", "masuk data miskin"],
+      "title": "Cara Mendaftar Data Terpadu Kesejahteraan Sosial (DTKS)",
+      "summary": "DTKS adalah basis data wajib bagi warga prasejahtera untuk diusulkan menerima bantuan PKH, BPNT, atau KIS PBI.",
+      "steps": [
+        "Warga mendaftarkan diri ke Desa/Kelurahan dengan membawa KTP dan KK.",
+        "Akan diadakan Musyawarah Kelurahan (Muskel) untuk memverifikasi kelayakan.",
+        "Petugas verifikator melakukan survei kunjungan rumah tangga.",
+        "Data yang disetujui diinput ke aplikasi SIKS-NG oleh operator Dinsos.",
+        "Dapat juga diusulkan mandiri via menu 'Usul Sanggah' di Aplikasi Cek Bansos Kemensos."
+      ],
+      "biaya": "Gratis (Rp 0)",
+      "waktu": "Proses verifikasi berkala (1 - 3 bulan)"
+    },
+    {
+      "id": "faq-jalan-rusak",
+      "categoryId": "pupr",
+      "keywords": ["jalan rusak", "jalan berlubang", "lapor jalan rusak", "aspal hancur", "jalanan bolong"],
+      "title": "Tata Cara Melaporkan Jalan Rusak / Berlubang",
+      "summary": "Laporan jalan rusak akan diverifikasi status jalannya (Jalan Kota/Kabupaten, Jalan Provinsi, atau Jalan Nasional) lalu diteruskan ke tim pemeliharaan jalan.",
+      "steps": [
+        "Ambil foto jalan berlubang secara jelas dari jarak dekat dan jarak jauh.",
+        "Catat lokasi akurat (Nama jalan, nomor/patokan ruko, RT/RW, Kelurahan, Kecamatan).",
+        "Kirim laporan melalui chatbot ini atau menu Pengaduan.",
+        "Sistem akan menerbitkan Nomor Tiket #LAPOR untuk memantau proses tambal sulam."
+      ],
+      "biaya": "Gratis",
+      "waktu": "Penanganan darurat: 3 - 7 Hari Kerja"
+    },
+    {
+      "id": "faq-pju-mati",
+      "categoryId": "pupr",
+      "keywords": ["lampu jalan mati", "pju mati", "jalan gelap", "lampu penerangan padam", "ganti bohlam jalan"],
+      "title": "Pengaduan Lampu Penerangan Jalan Umum (PJU) Padam",
+      "summary": "Dinas Perhubungan dan Dinas PUPR menyediakan tim reaksi cepat untuk perbaikan PJU padam.",
+      "steps": [
+        "Foto tiang lampu yang padam dan catat nomor ID tiang jika tertera.",
+        "Sertakan alamat lengkap lokasi jalan yang gelap.",
+        "Buat laporan pengaduan via chatbot atau portal pengaduan.",
+        "Tim teknisi mobil crane akan turun melakukan perbaikan atau pergantian bohlam LED."
+      ],
+      "biaya": "Gratis",
+      "waktu": "2 - 5 Hari Kerja"
+    },
+    {
+      "id": "faq-sampah-liar",
+      "categoryId": "kebersihan",
+      "keywords": ["sampah menumpuk", "tps liar", "sampah berserakan", "bau sampah", "lapor sampah"],
+      "title": "Laporan Timbunan Sampah Liar & TPS Ilegal",
+      "summary": "Dinas Lingkungan Hidup mengerahkan armada truk sampah untuk mengangkut tumpukan sampah liar yang meresahkan.",
+      "steps": [
+        "Sertakan foto tumpukan sampah dan estimasi volume.",
+        "Informasikan titik koordinat atau patokan lokasi jelas.",
+        "Buat laporan melalui fitur chat atau form lapor.",
+        "Tim saber sampah DLH akan menjadwalkan pengangkutan dan pemasangan plang larangan buang sampah."
+      ],
+      "biaya": "Gratis",
+      "waktu": "1 - 3 Hari Kerja"
+    },
+    {
+      "id": "faq-bpjs-faskes",
+      "categoryId": "kesehatan",
+      "keywords": ["pindah faskes bpjs", "ganti puskesmas", "ganti klinik bpjs", "rujukan bpjs", "cara minta rujukan"],
+      "title": "Cara Pindah Faskes Tingkat Pertama (FKTP) BPJS Kesehatan",
+      "summary": "Peserta BPJS dapat pindah faskes (Puskesmas/Klinik) dengan mudah melalui aplikasi Mobile JKN tanpa harus ke kantor cabang.",
+      "steps": [
+        "Unduh aplikasi 'Mobile JKN' di Google Play Store atau App Store.",
+        "Login menggunakan NIK / Nomor Kartu BPJS dan password Anda.",
+        "Pilih menu 'Perubahan Data Peserta'.",
+        "Pilih faskes tingkat 1 yang baru yang diinginkan.",
+        "Perubahan mulai aktif berlaku pada tanggal 1 di bulan berikutnya."
+      ],
+      "biaya": "Gratis",
+      "waktu": "Berlaku bulan berikutnya"
+    },
+    {
+      "id": "faq-nib-umkm",
+      "categoryId": "umkm",
+      "keywords": ["buat nib", "daftar nib", "izin usaha umkm", "oss rba", "surat izin usaha", "nib gratis"],
+      "title": "Panduan Pembuatan NIB (Nomor Induk Berusaha) Gratis untuk UMKM",
+      "summary": "NIB berlaku sebagai legalitas usaha, TDP, dan angka pengenal impor. Wajib dimiliki pelaku UMKM dan diproses 100% gratis secara online.",
+      "steps": [
+        "Buka portal resmi: oss.go.id",
+        "Klik tombol 'Daftar' dan pilih 'Usaha Mikro dan Kecil' (UMK).",
+        "Masukkan NIK KTP, nomor HP aktif, dan alamat email.",
+        "Lengkapi profil usaha (nama usaha, modal, bidang usaha KBLI, alamat usaha).",
+        "Sistem OSS akan langsung menerbitkan dokumen NIB ber-barcode yang dapat langsung diunduh dan dicetak."
+      ],
+      "biaya": "Gratis (Rp 0)",
+      "waktu": "15 - 30 Menit (Instan)"
+    },
+    {
+      "id": "faq-darurat-112",
+      "categoryId": "darurat",
+      "keywords": ["nomor darurat", "call center 112", "pemadam kebakaran", "ambulans darurat", "polisi", "bencana"],
+      "title": "Daftar Nomor Panggilan Darurat Siaga 24 Jam",
+      "summary": "Layanan darurat terpadu bebas pulsa untuk seluruh warga dalam kondisi genting.",
+      "steps": [
+        "112 : Layanan Tanggap Darurat Terpadu (Ambulans, Kebakaran, Kecelakaan, Bencana) - BEBAS PULSA",
+        "110 : Kepolisian RI",
+        "113 : Pemadam Kebakaran & Penyelamatan",
+        "119 : Emergency Medical Ambulance (Kemenkes)",
+        "115 : BASARNAS (Pencarian & Pertolongan)"
+      ],
+      "biaya": "Bebas Pulsa (Gratis dari semua operator)",
+      "waktu": "Siaga 24 Jam Non-Stop"
+    }
+  ]
+}

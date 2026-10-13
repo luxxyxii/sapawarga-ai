@@ -1,0 +1,23 @@
+{
+  "name": "sapawarga-ai",
+  "version": "1.0.0",
+  "description": "Portal Layanan Masyarakat & Pengaduan Warga Berbasis AI Chatbot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ai",
+    "chatbot",
+    "layanan-masyarakat",
+    "public-service",
+    "sp4n-lapor"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0"
+  }
+}
